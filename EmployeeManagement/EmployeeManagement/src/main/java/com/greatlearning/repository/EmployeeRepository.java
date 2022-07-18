@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package com.greatlearning.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.greatlearning.entity.Employee;
+
+/**
+ * @author Aravind
+ *
+ */
+@Repository
+public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
+	
+	
+	public List<Employee> findByFirstName(String firstName);
+	public List<Employee> findAllByOrderByFirstNameAsc();
+	public List<Employee> findAllByOrderByFirstNameDesc();
+
+}
